@@ -1,0 +1,8 @@
+# Default ignored files
+__pycache__/
+.idea
+.venv
+.config
+.image_tag
+*.bak
+tmp

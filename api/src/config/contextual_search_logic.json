@@ -1,0 +1,746 @@
+[
+  {
+    "Source_field_name": "Organism",
+    "Target_field_name": "Organism",
+    "description": "The organism field has no context. Filters restrict to Metazoan, Species and boost Common species.",
+    "Context_map": [
+      {
+        "Target_field_tag": [
+          "Metazoan",
+          "Species"
+        ],
+        "Effect": "filter"
+      },
+      {
+        "Target_field_tag": [
+          "Common_species"
+        ],
+        "Effect": "boost"
+      }
+    ]
+  },
+  {
+    "Source_field_name": "Organism",
+    "Target_field_name": "Developmental_stage",
+    "Context_map": [
+      {
+        "description": "Default developmental stage tag to be filtered",
+        "Target_field_tag": [
+          "Developmental_stage"
+        ],
+        "Effect": "filter"
+      },
+      {
+        "description": "If Mus musculus is chosen in the Organism field, the developmental stage field is restricted to the mouse developmental stage ontology (via an overloaded semantic tag).",
+        "Source_field_tag": "Mus_musculus",
+        "Target_field_tag": [
+          "Mus_musculus"
+        ],
+        "Effect": "filter"
+      },
+      {
+        "description": "If Caenorhabditis_elegans is chosen in the Organism field, the developmental stage field is restricted to the roundworm developmental stage ontology (via an overloaded semantic tag).",
+        "Source_field_tag": "Caenorhabditis_elegans",
+        "Target_field_tag": [
+          "Caenorhabditis_elegans"
+        ],
+        "Effect": "filter"
+      },
+      {
+        "description": "If Drosophila_melanogaster is chosen in the Organism field, the developmental stage field is restricted to the fruit fly developmental stage ontology (via an overloaded semantic tag).",
+        "Source_field_tag": "Drosophila_melanogaster",
+        "Target_field_tag": [
+          "Drosophila_melanogaster"
+        ],
+        "Effect": "filter"
+      },
+      {
+        "description": "If Danio_rerio is chosen in the Organism field, the developmental stage field is restricted to the zebrafish developmental stage ontology (via an overloaded semantic tag).",
+        "Source_field_tag": "Danio_rerio",
+        "Target_field_tag": [
+          "Danio_rerio"
+        ],
+        "Effect": "filter"
+      },
+      {
+        "description": "If Homo_sapiens is chosen in the Organism field, the developmental stage field is restricted to the human developmental stage ontology (via an overloaded semantic tag).",
+        "Source_field_tag": "Homo_sapiens",
+        "Target_field_tag": [
+          "Homo_sapiens"
+        ],
+        "Effect": "filter"
+      },
+      {
+        "description": "If Xenopus is chosen in the Organism field, the developmental stage field is restricted to the clawed frog developmental stage ontology (via an overloaded semantic tag).",
+        "Source_field_tag": "Xenopus",
+        "Target_field_tag": [
+          "Xenopus"
+        ],
+        "Effect": "filter"
+      }
+    ]
+  },
+  {
+    "Source_field_name": "Organism",
+    "Target_field_name": "Cell_type",
+    "Context_map": [
+      {
+        "Target_field_tag": [
+          "Cell"
+        ],
+        "Effect": "filter"
+      },
+      {
+        "Source_field_tag": "Mammalia",
+        "Target_field_tag": [
+          "Mammalia"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Drosophila",
+        "Target_field_tag": [
+          "Drosophila"
+        ],
+        "Effect": "filter"
+      }
+    ]
+  },
+  {
+    "Source_field_name": "Organ",
+    "Target_field_name": "Cell_type",
+    "Context_map": [
+      {
+        "Target_field_tag": [
+          "Cell"
+        ],
+        "Effect": "filter"
+      },
+      {
+        "Source_field_tag": "Cultured_cell",
+        "Target_field_tag": [
+          "Cultured_cell"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Uterine_cervix",
+        "Target_field_tag": [
+          "Uterine_cervix"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Nose",
+        "Target_field_tag": [
+          "Nose"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Pituitary_gland",
+        "Target_field_tag": [
+          "Pituitary_gland"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Tendon",
+        "Target_field_tag": [
+          "Tendon"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Ureter",
+        "Target_field_tag": [
+          "Ureter"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Urethra",
+        "Target_field_tag": [
+          "Urethra"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Large_intestine",
+        "Target_field_tag": [
+          "Large_intestine"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Intestine",
+        "Target_field_tag": [
+          "Intestine"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Mouth",
+        "Target_field_tag": [
+          "Mouth"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Blood",
+        "Target_field_tag": [
+          "Blood"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Breast",
+        "Target_field_tag": [
+          "Breast"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Testis",
+        "Target_field_tag": [
+          "Testis"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Stomach",
+        "Target_field_tag": [
+          "Stomach"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Heart",
+        "Target_field_tag": [
+          "Heart"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Brain",
+        "Target_field_tag": [
+          "Brain"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Eye",
+        "Target_field_tag": [
+          "Eye"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Skeletal_joint",
+        "Target_field_tag": [
+          "Skeletal_joint"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Penis",
+        "Target_field_tag": [
+          "Penis"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Ovary",
+        "Target_field_tag": [
+          "Ovary"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Uterus",
+        "Target_field_tag": [
+          "Uterus"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Vagina",
+        "Target_field_tag": [
+          "Vagina"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Mammalian_vulva",
+        "Target_field_tag": [
+          "Mammalian_vulva"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Seminal_vesicle",
+        "Target_field_tag": [
+          "Seminal_vesicle"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Vas_deferens",
+        "Target_field_tag": [
+          "Vas_deferens"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Adipose_tissue",
+        "Target_field_tag": [
+          "Adipose_tissue"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Nerve",
+        "Target_field_tag": [
+          "Nerve"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Esophagus",
+        "Target_field_tag": [
+          "Esophagus"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Saliva-secreting_gland",
+        "Target_field_tag": [
+          "Saliva-secreting_gland"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Rectum",
+        "Target_field_tag": [
+          "Rectum"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Diaphragm",
+        "Target_field_tag": [
+          "Diaphragm"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Parathyroid_gland",
+        "Target_field_tag": [
+          "Parathyroid_gland"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Skeletal_muscle_tissue",
+        "Target_field_tag": [
+          "Skeletal_muscle_tissue"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Vermiform_appendix",
+        "Target_field_tag": [
+          "Vermiform_appendix"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Anus",
+        "Target_field_tag": [
+          "Anus"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Pancreas",
+        "Target_field_tag": [
+          "Pancreas"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Scrotum",
+        "Target_field_tag": [
+          "Scrotum"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Bone_element",
+        "Target_field_tag": [
+          "Bone_element"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Artery",
+        "Target_field_tag": [
+          "Artery"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Vein",
+        "Target_field_tag": [
+          "Vein"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Ear",
+        "Target_field_tag": [
+          "Ear"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Nail",
+        "Target_field_tag": [
+          "Nail"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Tongue",
+        "Target_field_tag": [
+          "Tongue"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Larynx",
+        "Target_field_tag": [
+          "Larynx"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Hypothalamus",
+        "Target_field_tag": [
+          "Hypothalamus"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Pineal_body",
+        "Target_field_tag": [
+          "Pineal_body"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Mammary_gland",
+        "Target_field_tag": [
+          "Mammary_gland"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Blood_vessel",
+        "Target_field_tag": [
+          "Blood_vessel"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Capillary",
+        "Target_field_tag": [
+          "Capillary"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Placenta",
+        "Target_field_tag": [
+          "Placenta"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Thyroid_gland",
+        "Target_field_tag": [
+          "Thyroid_gland"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Lung",
+        "Target_field_tag": [
+          "Lung"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Hair_follicle",
+        "Target_field_tag": [
+          "Hair_follicle"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Mesentery",
+        "Target_field_tag": [
+          "Mesentery"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Skin_of_body",
+        "Target_field_tag": [
+          "Skin_of_body"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Spleen",
+        "Target_field_tag": [
+          "Spleen"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Liver",
+        "Target_field_tag": [
+          "Liver"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Small_intestine",
+        "Target_field_tag": [
+          "Small_intestine"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Gallbladder",
+        "Target_field_tag": [
+          "Gallbladder"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Kidney",
+        "Target_field_tag": [
+          "Kidney"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Spinal_cord",
+        "Target_field_tag": [
+          "Spinal_cord"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Bulbo-urethral_gland",
+        "Target_field_tag": [
+          "Bulbo-urethral_gland"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Prostate_gland",
+        "Target_field_tag": [
+          "Prostate_gland"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Adrenal_gland",
+        "Target_field_tag": [
+          "Adrenal_gland"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Thymus",
+        "Target_field_tag": [
+          "Thymus"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Tonsil",
+        "Target_field_tag": [
+          "Tonsil"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Clitoris",
+        "Target_field_tag": [
+          "Clitoris"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Lymphoid_system",
+        "Target_field_tag": [
+          "Lymphoid_system"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Trachea",
+        "Target_field_tag": [
+          "Trachea"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Dentition",
+        "Target_field_tag": [
+          "Dentition"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Fallopian_tube",
+        "Target_field_tag": [
+          "Fallopian_tube"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Vestigial_structure",
+        "Target_field_tag": [
+          "Vestigial_structure"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Interstitial_tissue",
+        "Target_field_tag": [
+          "Interstitial_tissue"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Pharynx",
+        "Target_field_tag": [
+          "Pharynx"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Skeletal_ligament",
+        "Target_field_tag": [
+          "Skeletal_ligament"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Umbilical_cord_blood",
+        "Target_field_tag": [
+          "Umbilical_cord_blood"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Mesenteric_fat_pad",
+        "Target_field_tag": [
+          "Mesenteric_fat_pad"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Bladder_organ",
+        "Target_field_tag": [
+          "Bladder_organ"
+        ],
+        "Effect": "boost"
+      },
+      {
+        "Source_field_tag": "Obsolete_genital_system",
+        "Target_field_tag": [
+          "Obsolete_genital_system"
+        ],
+        "Effect": "boost"
+      }
+    ]
+  },
+  {
+    "Source_field_name": "Organism",
+    "Target_field_name": "Organ",
+    "Context_map": [
+      {
+        "description": "The organ field has no context. Filters restrict to Multicellular_anatomical_structure.",
+        "Target_field_tag": [
+          "Multicellular_anatomical_structure"
+        ],
+        "Effect": "filter"
+      },
+      {
+        "Source_field_tag": "Drosophila",
+        "Target_field_tag": [
+          "Drosophila"
+        ],
+        "Effect": "filter"
+      }
+    ]
+  },
+  {
+    "Source_field_name": "Assay",
+    "Target_field_name": "Assay",
+    "description": "The assay field has no context. Filters restrict to Assay.",
+    "Context_map": [
+      {
+        "Target_field_tag": [
+          "Assay"
+        ],
+        "Effect": "filter"
+      }
+    ]
+  },
+  {
+    "Source_field_name": "Disease",
+    "Target_field_name": "Disease",
+    "description": "The disease field has no context. Filters restrict to Disease.",
+    "Context_map": [
+      {
+        "Target_field_tag": [
+          "Disease"
+        ],
+        "Effect": "filter"
+      }
+    ]
+  },
+  {
+    "Source_field_name": "Ethnicity",
+    "Target_field_name": "Ethnicity",
+    "description": "The ethnicity field has no context. Filters restrict to Race.",
+    "Context_map": [
+      {
+        "Target_field_tag": [
+          "Race"
+        ],
+        "Effect": "filter"
+      }
+    ]
+  },
+  {
+    "Source_field_name": "Sex",
+    "Target_field_name": "Sex",
+    "description": "The sex field has no context. Filters restrict to Sex.",
+    "Context_map": [
+      {
+        "Target_field_tag": [
+          "Sex"
+        ],
+        "Effect": "filter"
+      }
+    ]
+  }
+]

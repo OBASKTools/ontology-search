@@ -1,0 +1,94 @@
+{
+  "$schema":"http://json-schema.org/draft-04/schema#",
+  "title":"contextual_search_logic schema",
+  "description":"A JSON schema for documenting and validating the contextual search logic JSON file.",
+  "name":"contextual_search_logic_schema",
+  "type":"array",
+  "items":{
+    "$ref":"#/definitions/Config"
+  },
+  "definitions":{
+    "Config":{
+      "description":"A map that is used to look up and determine what semantic tag should be filtered and/or boosted. The effect depends on given source and target field names as well as source field name. The effects are applied for all the given target field tags.",
+      "type":"object",
+      "additionalProperties":false,
+      "properties":{
+        "description": {
+          "type": "string",
+          "description": "A free text description of the config mapping."
+        },
+        "Source_field_name":{
+          "$ref":"#/definitions/field_name"
+        },
+        "Target_field_name":{
+          "$ref":"#/definitions/field_name"
+        },
+        "Context_map":{
+          "type":"array",
+          "items":{
+            "$ref":"#/definitions/ContextMap"
+          }
+        }
+      },
+      "required":[
+        "Context_map",
+        "Source_field_name",
+        "Target_field_name"
+      ],
+      "title":"Config"
+    },
+    "ContextMap":{
+      "description":"A map that shows what semantic tags to filter and/or boost based on given effect and source field tag",
+      "type":"object",
+      "additionalProperties":false,
+      "properties":{
+        "description": {
+          "type": "string",
+          "description": "A free text description of the context map configuration."
+        },
+        "Source_field_tag":{
+          "description":"Semantic tag used in source field",
+          "type":"string"
+        },
+        "Target_field_tag":{
+          "description":"A list of target field tags indicates that the same effect should be applied to all tags in the list",
+          "type":"array",
+          "items":{
+            "type":"string"
+          }
+        },
+        "Effect":{
+          "$ref":"#/definitions/Effect"
+        }
+      },
+      "required":[
+        "Effect",
+        "Target_field_tag"
+      ],
+      "title":"ContextMap"
+    },
+    "Effect":{
+      "description":"An enum that shows what action will be taken in suggest endpoint, autocomplete endpoint, can be either 'filter' or 'boost'",
+      "type":"string",
+      "enum":[
+        "filter",
+        "boost"
+      ],
+      "title":"Effect"
+    },
+    "field_name":{
+      "description":"Metadata field names that can be found in dataset pages of the Cell Annotation Platform",
+      "type":"string",
+      "enum":[
+        "Organism",
+        "Organ",
+        "Assay",
+        "Disease",
+        "Ethnicity",
+        "Sex",
+        "Developmental_stage",
+        "Cell_type"
+      ]
+    }
+  }
+}
