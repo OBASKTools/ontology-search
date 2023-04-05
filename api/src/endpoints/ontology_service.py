@@ -12,7 +12,7 @@ from config.contextual_search_config import contextual_search_config
 from endpoints.parser import suggest_arguments, config_arguments, wrapper_arguments, cell_type_check_arguments
 from endpoints.serializers import metadata
 
-ns = api.namespace('api', description='Cell Annotation Platform Ontology API')
+ns = api.namespace('api', description='Ontology API')
 
 log = logging.getLogger(__name__)
 
