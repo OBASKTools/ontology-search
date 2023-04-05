@@ -44,38 +44,6 @@ class SuggestEndpoint(Resource):
 
         * <b>curie</b> (optional): Compact uniform resource identifier, used for dynamic boosting. i.e. UBERON:0002113
 
-        ------
-
-        Metadata field - filtering/boosting parameter mapping can be seen below:
-
-        <u>Organism</u>:
-        * Filters:  metazoan and  species
-        * Boost: common_species
-
-        <u>Assay</u>:
-        * Filter:  assay
-
-        <u>Disease</u>:
-        * Filters: disease
-
-        <u>Tissue</u>:
-        * Filter: multicellular_anatomical_structure  { More discussion needed }
-
-        <u>Organ</u>:
-        * Filter: multicellular_anatomical_structure
-
-        <u>Ethnicity</u>:
-        * Filter: race
-
-        <u>Sex</u>:
-        * Filter: sex
-
-        <u>Developmental Stage</u>:
-        * Filter: developmental_stage
-
-        <u>Cell Labels</u>:
-        * Filter: animal_cell
-
         """
         # Service parameters
         args = suggest_arguments.parse_args()
@@ -133,18 +101,6 @@ class WrappedSuggestEndpoint(Resource):
 
         * <b>source_tag</b> (optional): The semantic tag of the element which the request is made depends on.
 
-         ------
-
-        <b><u>Contextual field dependency map:</u></b>
-
-        * <b>source_field</b> -> <b>target_field</b>
-
-        * <b>Organism</b> -> <b>Developmental stage</b>
-
-        * <b>Organism</b> -> <b>Cell type</b>
-
-        * <b>Organ</b> -> <b>Cell type</b>
-
         """
         # Retrieve filtering and boosting parameters
         args = wrapper_arguments.parse_args()
@@ -173,16 +129,6 @@ class ConfigEndpoint(Resource):
         * <b>target_field</b> (mandatory): Location of where the suggest request will be made
 
         * <b>source_tag</b> (optional): The semantic tag of the element which the request is made depends on
-
-         ------
-
-        <b><u>Contextual field dependency map:</u></b>
-
-        * <b>Organism</b> -> <b>Developmental stage</b>
-
-        * <b>Organism</b> -> <b>Cell type</b>
-
-        * <b>Organ</b> -> <b>Cell type</b>
 
         """
         args = config_arguments.parse_args()
