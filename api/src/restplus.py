@@ -17,8 +17,8 @@ class OntologyApi(Api):
         return url_for(self.endpoint('specs'), _external=True, _scheme=scheme)
 
 
-api = OntologyApi(version='0.0.1', title='CAP Ontology RESTFUL API',
-                  description='Cell Annotation Platform Ontology restful API that wraps SOLR search.',
+api = OntologyApi(version='0.0.1', title='OBASK Ontology RESTFUL API',
+                  description='Ontology Based Application Starter Kit, Ontology restful API that wraps SOLR search.',
                   environ='development')
 
 

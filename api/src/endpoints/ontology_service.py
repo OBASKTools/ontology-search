@@ -59,10 +59,10 @@ class SuggestEndpoint(Resource):
         return jsonify(response.json())
 
 
-@ns.route('/suggest/v2')
-@api.expect(wrapper_arguments, validate=False)
-@api.param('query', 'Search terms', type=str, required=True)
-@api.param('target_field', 'Location of where the suggest request will be made', type=str, required=True)
+# @ns.route('/suggest/v2')
+# @api.expect(wrapper_arguments, validate=False)
+# @api.param('query', 'Search terms', type=str, required=True)
+# @api.param('target_field', 'Location of where the suggest request will be made', type=str, required=True)
 class WrappedSuggestEndpoint(Resource):
 
     @api.expect(metadata, validate=False)
@@ -118,7 +118,7 @@ class WrappedSuggestEndpoint(Resource):
         return jsonify(response.json())
 
 
-@ns.route('/config', methods=['GET'])
+# @ns.route('/config', methods=['GET'])
 class ConfigEndpoint(Resource):
 
     @api.expect(config_arguments, validate=False)
@@ -137,7 +137,7 @@ class ConfigEndpoint(Resource):
         return config_lookup(target_field, source_tags)
 
 
-@ns.route('/cell_type_check', methods=['GET'])
+# @ns.route('/cell_type_check', methods=['GET'])
 class CellTypeCheck(Resource):
 
     @api.expect(cell_type_check_arguments, validate=True)
