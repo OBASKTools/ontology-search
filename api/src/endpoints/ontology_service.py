@@ -65,7 +65,7 @@ class SuggestEndpoint(Resource):
 # @api.param('target_field', 'Location of where the suggest request will be made', type=str, required=True)
 class WrappedSuggestEndpoint(Resource):
 
-    @api.expect(metadata, validate=False)
+    # @api.expect(metadata, validate=False)
     def post(self):
         """
         Wrapper service to wrap config and suggest endpoint.
@@ -90,7 +90,7 @@ class WrappedSuggestEndpoint(Resource):
         add_cors_headers(response)
         return jsonify(response.json())
 
-    @api.expect(wrapper_arguments, validate=False)
+    # @api.expect(wrapper_arguments, validate=False)
     def get(self):
         """
         Wrapper service to wrap config and suggest endpoint.
