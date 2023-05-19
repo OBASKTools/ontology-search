@@ -12,7 +12,7 @@ Filtering is a key component of faceted search. It involves applying specific cr
 
 Boosting is a technique used to assign different levels of importance or relevance to specific attributes or facets. It allows certain facets or criteria to have a higher impact on the ranking of search results. By boosting relevant facets, the search service ensures that items matching those facets are given higher priority in the result set. This helps to improve the overall relevance of the search results and better aligns them with user preferences. For example, after selecting the 'homo sapiens' filter, users can further refine their search by choosing the 'kidney' term. This boosts the visibility of kidney-related terms, placing them higher in the search results compared to other organ-related terms.
 
-In combination, these components create a robust faceted search service with filtering and boosting mechanisms. Users can explore and refine their search results using facets, apply filters to narrow down their selection, and receive highly relevant results based on the boosting mechanism. API definition can be found at [OBASK Ontology RESTFUL API](#obaskontologyrestfulapi)
+In combination, these components create a robust faceted search service with filtering and boosting mechanisms. Users can explore and refine their search results using facets, apply filters to narrow down their selection, and receive highly relevant results based on the boosting mechanism. API definition can be found at [OBASK Ontology RESTFUL API](#obask-ontology-restful-api)
 
 ## Contextual Search
 
