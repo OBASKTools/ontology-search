@@ -69,7 +69,7 @@ Search service wrapper for Solr
 | ---- | ----------- |
 | 200 | Success |
 
-# Widget Support
+## Widget Support
 
 Check [OBASK search widget](https://github.com/OBASKTools/ontology-search-widget) for the compatible search widget.
 
