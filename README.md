@@ -68,7 +68,11 @@ Search service wrapper for Solr
 | Code | Description |
 | ---- | ----------- |
 | 200 | Success |
-   
+
+# Widget Support
+
+Check [OBASK search widget](https://github.com/OBASKTools/ontology-search-widget) for the compatible search widget.
+
 WARNING: _OBASK tools originated with work carried out to support the [Virtual Fly Brain](virtualflybrain.org) 
 project,  the [Allen Cell-Type Knowledge Explorer](https://knowledge.brain-map.org/celltypes) and the  [Cell Annotation 
 Platform](celltype.info). Code on this collection of repos should be considered a first beta 
