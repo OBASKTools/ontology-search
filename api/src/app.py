@@ -11,8 +11,6 @@ CORS(app)
 
 # Get URL prefix from environment variable or use root ('/') by default
 url_prefix = os.environ.get("OBASK_URL_PREFIX", "")
-if not url_prefix:  # if empty, set to root '/'
-    url_prefix = "/"
 
 blueprint = Blueprint("obask", __name__, url_prefix=url_prefix)
 
