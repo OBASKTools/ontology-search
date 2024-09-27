@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# version v1.0.0
+import os
 from flask import Flask, Blueprint
 from restplus import api
 from endpoints.ontology_service import ns as api_namespace
@@ -10,7 +9,12 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-blueprint = Blueprint("obask", __name__, url_prefix="/ontology")
+# Get URL prefix from environment variable or use root ('/') by default
+url_prefix = os.environ.get("OBASK_URL_PREFIX", "")
+if not url_prefix:  # if empty, set to root '/'
+    url_prefix = "/"
+
+blueprint = Blueprint("obask", __name__, url_prefix=url_prefix)
 
 
 def initialize_app(flask_app):
